@@ -33,8 +33,3 @@ export interface IdeviceColumnsProp extends IcolumnsProp{
   onChangeValueSearch: (e: RadioChangeEvent) => void;
   valueSearch: string;
 }
-
-export interface IModalInput {
-  field: string;
-  setEditingUser:(value: React.SetStateAction<DataType>) => void
-}

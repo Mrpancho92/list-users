@@ -1,4 +1,4 @@
-import { Table, Modal, notification } from "antd";
+import { Table, Input, Modal, notification } from "antd";
 import { useState, useEffect } from "react";
 import { messages } from '@/shared/constants/messages';
 import useUserService from '@/services/UserService';
@@ -9,7 +9,6 @@ import type { RadioChangeEvent } from 'antd';
 import {columns} from '@/shared/columns/columns';
 import {deviceColumns} from '@/shared/deviceColumns/deviceColumns';
 import { defaultEditingUser } from "@/shared/constants/defaultEditingUser";
-import {ModalInput} from '@/shared/Input/Input';
 
 const UsersTable = () => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -86,9 +85,30 @@ const UsersTable = () => {
           resetEditing();
         }}
       >
-        <ModalInput field={editingUser?.email} setEditingUser={setEditingUser}/>
-        <ModalInput field={editingUser?.first_name} setEditingUser={setEditingUser}/>
-        <ModalInput field={editingUser?.last_name} setEditingUser={setEditingUser}/>
+        <Input
+            value={editingUser?.email}
+            onChange={(e) => {
+                setEditingUser((pre) => {
+                    return { ...pre, email: e.target.value };
+                });
+            }}
+        />
+        <Input
+            value={editingUser?.first_name}
+            onChange={(e) => {
+                setEditingUser((pre) => {
+                    return { ...pre, first_name: e.target.value };
+                });
+            }}
+        />
+        <Input
+            value={editingUser?.last_name}
+            onChange={(e) => {
+                setEditingUser((pre) => {
+                    return { ...pre, last_name: e.target.value };
+                });
+            }}
+        />
       </Modal>
     </div>
   );

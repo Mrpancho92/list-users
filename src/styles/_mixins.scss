@@ -1,0 +1,9 @@
+$screen-xs: 700px;
+
+@mixin media($size) {
+  @if ($size == xs) {
+    @media only screen and (width <= $screen-xs) {
+      @content;
+    }
+  }
+}

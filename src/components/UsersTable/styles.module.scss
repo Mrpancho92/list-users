@@ -1,0 +1,25 @@
+@import '@/styles/_main.scss';
+
+.container {
+  display: flex;
+  background-color: lightgray;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.mobileList span {
+  display: block;
+  & > h4, p {
+    display: inline-block;
+  }
+  & p {
+    margin-left: 5px;
+  }
+}

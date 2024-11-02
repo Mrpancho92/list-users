@@ -1,0 +1,11 @@
+@import '@/styles/_main.scss';
+
+.mobileList span {
+  display: block;
+  & > h4, p {
+    display: inline-block;
+  }
+  & p {
+    margin-left: 5px;
+  }
+}

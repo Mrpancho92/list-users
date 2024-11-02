@@ -1,3 +1,5 @@
+import type { RadioChangeEvent } from 'antd';
+
 export interface DataType {
     key: number;
     id: number;
@@ -6,14 +8,6 @@ export interface DataType {
     last_name: string;
   }
 export type DataTypeInitially = Omit<DataType, "key">;
-export interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
-    editing: boolean;
-    dataIndex: string;
-    title: any;
-    inputType: 'number' | 'text';
-    record: DataType;
-    index: number;
-  }
 
 export type DataIndex = keyof DataType;
 
@@ -29,4 +23,18 @@ export interface FilterDropdownProps {
   setSelectedKeys: (selectedKeys: React.Key[]) => void;
   selectedKeys: React.Key[];
   confirm: (param?: FilterConfirmProps) => void;
+}
+
+export interface IcolumnsProp {
+  onEditUser: (record: DataType) => void;
+  onDeleteUser: (record: DataType) => void;
+}
+export interface IdeviceColumnsProp extends IcolumnsProp{
+  onChangeValueSearch: (e: RadioChangeEvent) => void;
+  valueSearch: string;
+}
+
+export interface IModalInput {
+  field: string;
+  setEditingUser:(value: React.SetStateAction<DataType>) => void
 }

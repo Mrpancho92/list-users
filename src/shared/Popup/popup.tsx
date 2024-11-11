@@ -8,7 +8,6 @@ interface IPopupProps {
    onDeleteUser: (record: DataType) => void; 
    editingUser: DataType;
 }
-
 const Popup = ({popup, onEditUser, onDeleteUser, editingUser}:IPopupProps) => popup.visible &&
   <ul className="popup" style={{left: `${popup.x}px`, top: `${popup.y}px`}} >
     <li onClick={() => onEditUser(editingUser)}>

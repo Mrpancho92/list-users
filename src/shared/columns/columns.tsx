@@ -115,4 +115,4 @@ export const columns = ({onEditUser,onDeleteUser}:IcolumnsProp) => {
       },
     },
   ];
-}
+};

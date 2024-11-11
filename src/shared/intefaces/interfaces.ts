@@ -33,3 +33,9 @@ export interface IdeviceColumnsProp extends IcolumnsProp{
   onChangeValueSearch: (e: RadioChangeEvent) => void;
   valueSearch: string;
 }
+
+export interface IPopup {
+  visible: boolean;
+  x: number;
+  y: number;
+}
